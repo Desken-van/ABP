@@ -1,0 +1,147 @@
+﻿@using ABP.Application.Models.Table
+@model ABP.Application.Models.Table.TableData
+@{
+    ViewBag.Title = "Index";
+}
+<label>Результаты первого эксперимента</label>
+<table class="table">
+    <thead>
+        <tr><th>Общее количество устройств</th><th>Цвет 1</th><th>Цвет 2</th><th>Цвет 3</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>@ViewBag.Experiment1.TotalDeviceCount</td><td>@ViewBag.Experiment1.Options.ToArray()[0].TotalCountIn</td><td>@ViewBag.Experiment1.Options.ToArray()[1].TotalCountIn</td><td>@ViewBag.Experiment1.Options.ToArray()[2].TotalCountIn</td></tr>
+        @{
+            var count1 = 0;
+            var count2 = 0;
+            var count3 = 0;
+
+            var pos = 1;
+
+            var len1 = ViewBag.Experiment1.Options.ToArray()[0].TotalCountIn;
+            var len2 = ViewBag.Experiment1.Options.ToArray()[1].TotalCountIn;
+            var len3 = ViewBag.Experiment1.Options.ToArray()[2].TotalCountIn;
+
+            var loop = true;
+
+            while (loop)
+            {
+                var s1 = string.Empty;
+                var s2 = string.Empty;
+                var s3 = string.Empty;
+
+                if (count1 != len1)
+                {
+                    var deviceData = ViewBag.Experiment1.Options.ToArray()[0].DeviceData.ToArray()[count1];
+
+                    s1 = deviceData.Device.DeviceName;
+
+                    count1++;
+                }
+
+                if (count2 != len2)
+                {
+                    var deviceData = ViewBag.Experiment1.Options.ToArray()[1].DeviceData.ToArray()[count2];
+
+                    s2 = deviceData.Device.DeviceName;
+
+                    count2++;
+                }
+
+                if (count3 != len3)
+                {
+                    var deviceData = ViewBag.Experiment1.Options.ToArray()[2].DeviceData.ToArray()[count3];
+
+                    s3 = deviceData.Device.DeviceName;
+
+                    count3++;
+                }
+
+                <tr><td>@pos</td> <td>@s1</td> <td>@s2</td> <td>@s3</td></tr>
+
+                if (count1 == len1 && count2 == len2 && count3 == len3)
+                {
+                    break;
+                }
+
+                pos++;
+            }
+        }
+    </tbody>
+</table>
+<label>Результаты второго эксперимента</label>
+<table class="table">
+    <thead>
+        <tr><th>Общее количество устройств</th><th>50</th><th>20</th><th>5</th><th>10</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>@ViewBag.Experiment2.TotalDeviceCount</td><td>@ViewBag.Experiment2.Options.ToArray()[0].TotalCountIn</td><td>@ViewBag.Experiment2.Options.ToArray()[1].TotalCountIn</td><td>@ViewBag.Experiment2.Options.ToArray()[2].TotalCountIn</td><td>@ViewBag.Experiment2.Options.ToArray()[3].TotalCountIn</td></tr>
+        @{
+            count1 = 0;
+            count2 = 0;
+            count3 = 0;
+            var count4 = 0;
+
+            pos = 1;
+
+            len1 = ViewBag.Experiment2.Options.ToArray()[0].TotalCountIn;
+            len2 = ViewBag.Experiment2.Options.ToArray()[1].TotalCountIn;
+            len3 = ViewBag.Experiment2.Options.ToArray()[2].TotalCountIn;
+            var len4 = ViewBag.Experiment2.Options.ToArray()[3].TotalCountIn;
+
+            loop = true;
+
+            while (loop)
+            {
+                var s1 = string.Empty;
+                var s2 = string.Empty;
+                var s3 = string.Empty;
+                var s4 = string.Empty;
+
+                if (count1 != len1)
+                {
+                    var deviceData = ViewBag.Experiment2.Options.ToArray()[0].DeviceData.ToArray()[count1];
+
+                    s1 = deviceData.Device.DeviceName;
+
+                    count1++;
+                }
+
+                if (count2 != len2)
+                {
+                    var deviceData = ViewBag.Experiment2.Options.ToArray()[1].DeviceData.ToArray()[count2];
+
+                    s2 = deviceData.Device.DeviceName;
+
+                    count2++;
+                }
+
+                if (count3 != len3)
+                {
+                    var deviceData = ViewBag.Experiment2.Options.ToArray()[2].DeviceData.ToArray()[count3];
+
+                    s3 = deviceData.Device.DeviceName;
+
+                    count3++;
+                }
+
+                if (count4 != len4)
+                {
+                    var deviceData = ViewBag.Experiment2.Options.ToArray()[3].DeviceData.ToArray()[count4];
+
+                    s4 = deviceData.Device.DeviceName;
+
+                    count4++;
+                }
+
+                <tr><td>@pos</td> <td>@s1</td> <td>@s2</td> <td>@s3</td> <td>@s4</td></tr>
+
+                if (count1 == len1 && count2 == len2 && count3 == len3 && count4 == len4)
+                {
+                    break;
+                }
+
+                pos++;
+            }
+        }
+    </tbody>
+</table>

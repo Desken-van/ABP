@@ -1,0 +1,3 @@
+﻿TRUNCATE TABLE DEVICES;
+TRUNCATE TABLE DEVICETOKENS;
+truncate table experiments;
