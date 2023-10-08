@@ -11,15 +11,12 @@ namespace ABP_Server.Controllers.EF
 {
     public class DeviceEFController : Controller
     {
-        private readonly ILogger<DeviceEFController> _logger;
         private readonly IMapper _mapper;
         private readonly IDeviceEFService _service;
 
-        public DeviceEFController(IDeviceEFService service, ILogger<DeviceEFController> logger, IMapper mapper)
+        public DeviceEFController(IDeviceEFService service, IMapper mapper)
         {
             _service = service;
-
-            _logger = logger;
 
             _mapper = mapper;
         }

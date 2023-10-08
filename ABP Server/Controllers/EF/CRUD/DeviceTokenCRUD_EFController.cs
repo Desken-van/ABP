@@ -15,14 +15,10 @@ namespace ABP_Server.Controllers.EF.CRUD
     {
         private readonly IDeviceTokenEFRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<DeviceTokenCRUD_EFController> _logger;
 
-        public DeviceTokenCRUD_EFController(IDeviceTokenEFRepository repo,
-            ILogger<DeviceTokenCRUD_EFController> logger, IMapper mapper)
+        public DeviceTokenCRUD_EFController(IDeviceTokenEFRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +32,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -57,7 +53,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((token != null))
                 {
-                    return Json(token);
+                    return Ok(token);
                 }
 
                 return NotFound();
@@ -77,7 +73,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -97,7 +93,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -115,14 +111,9 @@ namespace ABP_Server.Controllers.EF.CRUD
             {
                 var result = _mapper.Map<DeviceToken>(tokenRequest);
 
-                var response = await _repo.Create(result);
-
-                if (response)
-                {
-                    return Ok();
-                }
-
-                return NotFound();
+                await _repo.Create(result);
+                
+                return Ok();
             }
             catch (Exception ex)
             {

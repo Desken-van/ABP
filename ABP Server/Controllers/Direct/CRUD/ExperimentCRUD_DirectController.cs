@@ -15,14 +15,10 @@ namespace ABP_Server.Controllers.Direct.CRUD
     {
         private readonly IExperimentDirectRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<ExperimentCRUD_DirectController> _logger;
 
-        public ExperimentCRUD_DirectController(IExperimentDirectRepository repo,
-            ILogger<ExperimentCRUD_DirectController> logger, IMapper mapper)
+        public ExperimentCRUD_DirectController(IExperimentDirectRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +32,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -56,7 +52,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -76,7 +72,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -96,7 +92,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -114,15 +110,9 @@ namespace ABP_Server.Controllers.Direct.CRUD
             {
                 var result = _mapper.Map<Experiment>(experiment);
 
-                var response = await _repo.Create(result);
+                await _repo.Create(result);
 
-                if (response)
-                {
-                    return Ok();
-                }
-
-                return NotFound();
-
+                return Ok();
             }
             catch (Exception ex)
             {

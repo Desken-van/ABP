@@ -15,9 +15,9 @@ namespace ABP_Client
     {
         static async Task Main(string[] args)
         {
-            //await CalculateProcess(600, true);
+            await CalculateProcess(3, true);
 
-            await TableProcess(true, ExperimentType.ButtonExperiment);
+            //await TableProcess(true, ExperimentType.ButtonExperiment);
 
             Console.ReadKey();
         }

@@ -13,15 +13,12 @@ namespace ABP_Server.Controllers.EF
 {
     public class ExperimentEFController : Controller
     {
-        private readonly ILogger<ExperimentEFController> _logger;
         private readonly IMapper _mapper;
         private readonly IExperimentEFService _service;
 
-        public ExperimentEFController(IExperimentEFService service, ILogger<ExperimentEFController> logger, IMapper mapper)
+        public ExperimentEFController(IExperimentEFService service, IMapper mapper)
         {
             _service = service;
-
-            _logger = logger;
 
             _mapper = mapper;
         }

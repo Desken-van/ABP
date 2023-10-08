@@ -15,14 +15,10 @@ namespace ABP_Server.Controllers.Direct.CRUD
     {
         private readonly IDeviceDirectRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<DeviceCRUD_DirectController> _logger;
 
-        public DeviceCRUD_DirectController(IDeviceDirectRepository repo,
-            ILogger<DeviceCRUD_DirectController> logger, IMapper mapper)
+        public DeviceCRUD_DirectController(IDeviceDirectRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +32,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -56,7 +52,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((device != null))
                 {
-                    return Json(device);
+                    return Ok(device);
                 }
 
                 return NotFound();
@@ -76,7 +72,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((device != null))
                 {
-                    return Json(device);
+                    return Ok(device);
                 }
 
                 return NotFound();

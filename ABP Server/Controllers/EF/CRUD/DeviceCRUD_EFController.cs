@@ -15,14 +15,10 @@ namespace ABP_Server.Controllers.EF.CRUD
     {
         private readonly IDeviceEFRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<DeviceCRUD_EFController> _logger;
 
-        public DeviceCRUD_EFController(IDeviceEFRepository repo,
-            ILogger<DeviceCRUD_EFController> logger, IMapper mapper)
+        public DeviceCRUD_EFController(IDeviceEFRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +32,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -56,7 +52,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((device != null))
                 {
-                    return Json(device);
+                    return Ok(device);
                 }
 
                 return NotFound();
@@ -76,7 +72,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((device != null))
                 {
-                    return Json(device);
+                    return Ok(device);
                 }
 
                 return NotFound();

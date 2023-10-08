@@ -14,7 +14,7 @@ namespace ABP.Application.Profiles
 
             CreateMap<DeviceTokenEntity, DeviceToken>().ReverseMap();
 
-            CreateMap<DeviceRequest, Device>()
+            CreateMap<DeviceRequest, Device>().ReverseMap()
                 .ForMember(dest => dest.DeviceName, opt => opt.MapFrom(src => src.DeviceName));
 
             CreateMap<DeviceTokenRequest, DeviceToken>().ReverseMap()

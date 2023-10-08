@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP Server", "ABP Server.csproj", "{19DFF3E3-E50D-45A5-8144-3BF3901E38F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP Server", "ABP Server.csproj", "{19DFF3E3-E50D-45A5-8144-3BF3901E38F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP Client", "..\ABP Client\ABP Client.csproj", "{3137901C-B579-41BD-92C0-AD629DF85635}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP Client", "..\ABP Client\ABP Client.csproj", "{3137901C-B579-41BD-92C0-AD629DF85635}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Сore", "Сore", "{E9A57C88-8381-4BB8-AE07-46C3B8105481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP.AppCore", "..\ABP.AppCore\ABP.AppCore.csproj", "{2A660186-7F8C-4C67-8CEA-00A86735C549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP.AppCore", "..\ABP.AppCore\ABP.AppCore.csproj", "{2A660186-7F8C-4C67-8CEA-00A86735C549}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D4BC8DC5-E20E-4068-A774-AD37AF6001D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP.Repository", "..\ABP.Repository.EF\ABP.Repository.csproj", "{84D8FDF5-F6AC-400D-9512-780AA20C704D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP.Repository", "..\ABP.Repository.EF\ABP.Repository.csproj", "{84D8FDF5-F6AC-400D-9512-780AA20C704D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E1EBA69B-2322-4836-B30C-48B771DDEC0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP.Application", "..\ABP.Application\ABP.Application.csproj", "{7485B1F3-D33D-45DA-AF2D-4DF962766688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP.Application", "..\ABP.Application\ABP.Application.csproj", "{7485B1F3-D33D-45DA-AF2D-4DF962766688}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7313F6EE-1EB3-421D-B467-360D48E3BAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP.Infrastructure", "..\ABP.Infrastructure\ABP.Infrastructure.csproj", "{D4F9F753-BA1C-4C49-B56C-6A087D289BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABP.Infrastructure", "..\ABP.Infrastructure\ABP.Infrastructure.csproj", "{D4F9F753-BA1C-4C49-B56C-6A087D289BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABP.Tests", "..\ABP.Tests\ABP.Tests.csproj", "{E36F1B0A-4EA3-44C5-8450-0206925EE7BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{D4F9F753-BA1C-4C49-B56C-6A087D289BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4F9F753-BA1C-4C49-B56C-6A087D289BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4F9F753-BA1C-4C49-B56C-6A087D289BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36F1B0A-4EA3-44C5-8450-0206925EE7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36F1B0A-4EA3-44C5-8450-0206925EE7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36F1B0A-4EA3-44C5-8450-0206925EE7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36F1B0A-4EA3-44C5-8450-0206925EE7BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

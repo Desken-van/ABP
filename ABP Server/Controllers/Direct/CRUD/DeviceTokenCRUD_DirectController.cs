@@ -15,14 +15,10 @@ namespace ABP_Server.Controllers.Direct.CRUD
     {
         private readonly IDeviceTokenDirectRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<DeviceTokenCRUD_DirectController> _logger;
 
-        public DeviceTokenCRUD_DirectController(IDeviceTokenDirectRepository repo,
-            ILogger<DeviceTokenCRUD_DirectController> logger, IMapper mapper)
+        public DeviceTokenCRUD_DirectController(IDeviceTokenDirectRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +32,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -57,7 +53,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((token != null))
                 {
-                    return Json(token);
+                    return Ok(token);
                 }
 
                 return NotFound();
@@ -77,7 +73,7 @@ namespace ABP_Server.Controllers.Direct.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -93,11 +89,11 @@ namespace ABP_Server.Controllers.Direct.CRUD
         {
             try
             {
-                var experiment = await _repo.GetDeviceTokenByRequestAsync(request);
+                var token = await _repo.GetDeviceTokenByRequestAsync(request);
 
-                if ((experiment != null))
+                if ((token != null))
                 {
-                    return Json(experiment);
+                    return Ok(token);
                 }
 
                 return NotFound();
@@ -115,14 +111,9 @@ namespace ABP_Server.Controllers.Direct.CRUD
             {
                 var result = _mapper.Map<DeviceToken>(tokenRequest);
 
-                var response = await _repo.Create(result);
+                await _repo.Create(result);
 
-                if (response)
-                {
-                    return Ok();
-                }
-
-                return NotFound();
+                return Ok();
             }
             catch (Exception ex)
             {

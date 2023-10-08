@@ -2,7 +2,6 @@
 using ABP.Repository.ContractImplementation.EFImplementations;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
@@ -15,14 +14,10 @@ namespace ABP_Server.Controllers.EF.CRUD
     {
         private readonly IExperimentEFRepository _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger<ExperimentCRUD_EFController> _logger;
 
-        public ExperimentCRUD_EFController(IExperimentEFRepository repo,
-            ILogger<ExperimentCRUD_EFController> logger, IMapper mapper)
+        public ExperimentCRUD_EFController(IExperimentEFRepository repo, IMapper mapper)
         {
             _repo = repo;
-
-            _logger = logger;
 
             _mapper = mapper;
         }
@@ -36,7 +31,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((list != null) || (list.Count() > 0))
                 {
-                    return Json(list);
+                    return Ok(list);
                 }
 
                 return NotFound();
@@ -56,7 +51,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -76,7 +71,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
@@ -96,7 +91,7 @@ namespace ABP_Server.Controllers.EF.CRUD
 
                 if ((experiment != null))
                 {
-                    return Json(experiment);
+                    return Ok(experiment);
                 }
 
                 return NotFound();
